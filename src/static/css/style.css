@@ -1,0 +1,94 @@
+html, .next {
+	color: #dddddd
+}
+
+header {
+	background: #444444;
+	box-shadow: 0px 5px 5px #444444;
+	z-index:2;
+}
+
+nav > a {
+	color: #dddddd;
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+.nav-sep {
+	background: white;
+	height: 50%;
+	width: 1px;
+}
+
+.content-rectangle {
+	background: #602F42;
+}
+
+.content-outline {
+	background: #2F5A60;
+}
+
+.content-scribbles {
+	background: #604D2F;
+}
+
+.content {
+	background: #777777;
+}
+
+#scribbles-bar {
+	background: #777777;
+}
+
+.next {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+/* TRAINING ############################ */
+
+.instructions {
+	color: #777777;
+	font-size: 1.5rem;
+}
+
+/* FEEDBACK ############################ */
+
+footer {
+	background: #444444;
+	font-size: 2rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.valid, .next {
+	background: #449944;
+}
+
+.invalid {
+	background: #994444;
+}
+
+/* SCRIBBLES ############################ */
+
+.btn-fg {
+	background: green;
+}
+
+.btn-bg {
+	background: red;
+}
+
+#scribbles-bar {
+	font-size: 2rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* SAVING ############################ */
+
+.button-save {
+	font-size: 2rem;
+}

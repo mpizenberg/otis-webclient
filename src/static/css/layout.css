@@ -1,0 +1,79 @@
+html, body, #app, nav, #content > div {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	height: 3rem;
+	width: 100%;
+	flex: 0 0 auto;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+nav > a {
+	flex-grow: 1;
+	text-align: center;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.study-progress {
+	height: 1rem;
+	width: 100%;
+	flex: 0 0 auto;
+}
+
+#content {
+	flex: 1 1 0;
+}
+
+.next {
+	position: fixed;
+	right: 0;
+	top: 30%;
+	width: 10%;
+	height: 40%;
+}
+
+footer {
+	height: 3rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex: 0 0 auto;
+}
+
+/* TRAINING ############################ */
+
+.instructions {
+	padding: 1rem 2rem;
+	display: flex;
+	align-items: center;
+}
+
+.instructions > div {
+	margin-right: 2rem;
+}
+
+.img-instructions {
+	flex: 0 0 auto;
+	width: 16rem;
+	height: 12rem;
+}

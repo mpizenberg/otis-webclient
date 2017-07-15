@@ -1,0 +1,28 @@
+{
+    "version": "1.0.0",
+    "summary": "User study for ACM Multimedia 2017 - Client app",
+    "repository": "https://github.com/user/project.git",
+    "license": "MPL-2.0",
+    "source-directories": [
+        "src",
+        "dependencies/elm-image-annotation/src",
+        "dependencies/elm-image-annotation/dependencies/elm-flat-matrix/src"
+    ],
+    "exposed-modules": [],
+    "dependencies": {
+        "Fresheyeball/elm-return": "6.0.3 <= v < 7.0.0",
+        "Skinney/elm-array-exploration": "2.0.2 <= v < 3.0.0",
+        "elm-lang/core": "5.1.1 <= v < 6.0.0",
+        "elm-lang/html": "2.0.0 <= v < 3.0.0",
+        "elm-lang/http": "1.0.0 <= v < 2.0.0",
+        "elm-lang/navigation": "2.1.0 <= v < 3.0.0",
+        "elm-lang/svg": "2.0.0 <= v < 3.0.0",
+        "elm-lang/window": "1.0.1 <= v < 2.0.0",
+        "evancz/url-parser": "2.0.1 <= v < 3.0.0",
+        "mpizenberg/elm-image-collection": "4.0.1 <= v < 5.0.0",
+        "opensolid/geometry": "1.1.0 <= v < 2.0.0",
+        "opensolid/svg": "1.0.2 <= v < 2.0.0",
+        "yotamDvir/elm-pivot": "2.0.0 <= v < 3.0.0"
+    },
+    "elm-version": "0.18.0 <= v < 0.19.0"
+}
