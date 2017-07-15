@@ -5,15 +5,13 @@ import Types.Study.Outline exposing (Outline)
 import Html exposing (..)
 import Html.Attributes as Attributes exposing (..)
 import Views.Study.Outline as Outline
-import Views.Header as Header
 import Views.Study.Helpers as Helpers
 
 
 view : ( Int, Int ) -> Model -> String -> Outline -> Html Msg
 view ( current, total ) model imageUrl outline =
     div [ id "app" ]
-        [ Header.view model
-        , Helpers.progressBar current total
+        [ Helpers.progressBar current total
         , Helpers.instructionsBar Outline.imgurImage textInstructions
         , Outline.content model outline
         , Outline.outlineFooter outline

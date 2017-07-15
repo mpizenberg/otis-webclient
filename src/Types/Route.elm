@@ -7,10 +7,7 @@ import Navigation exposing (Location)
 
 
 type Route
-    = Home
-    | Study
-    | Thanks
-    | Error
+    = Study
 
 
 

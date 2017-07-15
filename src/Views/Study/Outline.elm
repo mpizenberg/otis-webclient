@@ -6,7 +6,6 @@ import DrawingArea.Viewer as Viewer exposing (Viewer)
 import Study
 import Html exposing (..)
 import Html.Attributes as Attributes exposing (..)
-import Views.Header as Header
 import Views.Study.Helpers as Helpers
 import Svg
 import Svg.Attributes as SvgAttributes
@@ -18,8 +17,7 @@ import OpenSolid.Svg as Svg
 view : ( Int, Int ) -> Model -> String -> Outline -> Html Msg
 view ( current, total ) model imageUrl outline =
     div [ id "app" ]
-        [ Header.view model
-        , Helpers.progressBar current total
+        [ Helpers.progressBar current total
         , Helpers.instructionsBar imgurImage textInstructions
         , content model outline
         , outlineFooter outline
@@ -85,7 +83,7 @@ content model outline =
     in
         div [ id "content", class "content-outline" ]
             (case outline.checked of
-                Just (Annotation.Valid) ->
+                Just Annotation.Valid ->
                     [ htmlViewer, Helpers.nextButton ]
 
                 _ ->

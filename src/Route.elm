@@ -20,12 +20,7 @@ update msg model =
 urlUpdate : Location -> Model -> ( Model, Cmd Msg )
 urlUpdate location model =
     case parse location of
-        Just (Route.Home) ->
-            ( { model | currentRoute = Route.Home }
-            , Task.perform (log Route.Home) Time.now
-            )
-
-        Just (Route.Study) ->
+        Just Route.Study ->
             ( { model | currentRoute = Route.Study }
             , Cmd.batch
                 [ Ports.askContentSize ()
@@ -33,18 +28,8 @@ urlUpdate location model =
                 ]
             )
 
-        Just (Route.Thanks) ->
-            ( { model | currentRoute = Route.Thanks }
-            , Task.perform (log Route.Thanks) Time.now
-            )
-
-        Just (Route.Error) ->
-            ( { model | currentRoute = Route.Error }
-            , Task.perform (log Route.Error) Time.now
-            )
-
         Nothing ->
-            ( model, modifyUrl Route.Error )
+            ( model, modifyUrl Route.Study )
 
 
 toUrl : Route -> String
@@ -52,17 +37,8 @@ toUrl route =
     let
         hash =
             case route of
-                Route.Home ->
-                    "/"
-
                 Route.Study ->
                     "/study"
-
-                Route.Thanks ->
-                    "/thanks"
-
-                Route.Error ->
-                    "/error"
     in
         "/#" ++ hash
 
@@ -70,10 +46,7 @@ toUrl route =
 parser : Parser (Route -> a) a
 parser =
     Parse.oneOf
-        [ Parse.map Route.Home (Parse.top)
-        , Parse.map Route.Study (Parse.s "study")
-        , Parse.map Route.Thanks (Parse.s "thanks")
-        , Parse.map Route.Error (Parse.s "error")
+        [ Parse.map Route.Study (Parse.s "study")
         ]
 
 

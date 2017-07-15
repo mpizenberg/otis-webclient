@@ -6,7 +6,6 @@ import Types.Study.Train as Train exposing (Train(..))
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Views.Header as Header
 import Views.Study.Rectangle as Rectangle
 import Views.Study.Outline as Outline
 import Views.Study.Scribbles as Scribbles
@@ -21,8 +20,7 @@ view model =
     case model.study.status of
         Study.LoadingResources n total ->
             div [ id "app" ]
-                [ Header.view model
-                , div [ id "content", class "content" ]
+                [ div [ id "content", class "content" ]
                     [ p []
                         [ text "Loading resources ...  "
                         , progress [ value (toString n), Html.Attributes.max (toString total) ] []
@@ -52,15 +50,13 @@ view model =
 
         Study.Finished _ ->
             div [ id "app" ]
-                [ Header.view model
-                , div [ id "content", class "content" ]
+                [ div [ id "content", class "content" ]
                     [ p [] [ saveButton ] ]
                 ]
 
         Study.SavingError _ ->
             div [ id "app" ]
-                [ Header.view model
-                , div [ id "content", class "content" ]
+                [ div [ id "content", class "content" ]
                     [ p [] [ text "Oups, an error occurred while saving on the server, please retry" ]
                     , p [] [ saveButton ]
                     ]
@@ -68,8 +64,7 @@ view model =
 
         Study.SavedOnServer userId ->
             div [ id "app" ]
-                [ Header.view model
-                , div [ id "content", class "content" ]
+                [ div [ id "content", class "content" ]
                     [ p [] [ text ("Successfully saved, your id is: " ++ toString userId) ] ]
                 ]
 

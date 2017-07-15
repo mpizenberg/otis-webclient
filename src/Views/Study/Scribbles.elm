@@ -8,7 +8,6 @@ import Study
 import Html exposing (..)
 import Html.Attributes as Attributes exposing (..)
 import Html.Events exposing (..)
-import Views.Header as Header
 import Views.Study.Helpers as Helpers
 import Svg exposing (Svg)
 import Svg.Attributes as SvgAttributes
@@ -22,8 +21,7 @@ import OpenSolid.Svg as Svg
 view : ( Int, Int ) -> Model -> String -> Scribbles -> Html Msg
 view ( current, total ) model imageUrl scribbles =
     div [ id "app" ]
-        [ Header.view model
-        , Helpers.progressBar current total
+        [ Helpers.progressBar current total
         , Helpers.instructionsBar imgurImage textInstructions
         , content model scribbles
         , buttonsBar (toFeedback scribbles.checked)
@@ -76,7 +74,7 @@ content model scribbles =
     in
         div [ id "content", class "content-scribbles" ]
             (case scribbles.checked of
-                Just (Annotation.Valid) ->
+                Just Annotation.Valid ->
                     [ htmlViewer, Helpers.nextButton ]
 
                 _ ->
@@ -104,10 +102,10 @@ toFeedback check =
         Nothing ->
             "  Please start adding foreground"
 
-        Just (Annotation.FGLengthToShort) ->
+        Just Annotation.FGLengthToShort ->
             "  Please add more foreground"
 
-        Just (Annotation.BGLengthToShort) ->
+        Just Annotation.BGLengthToShort ->
             "  Please add more background"
 
         Just (Annotation.FGScribbleOutsideGT _) ->

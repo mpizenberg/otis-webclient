@@ -16,10 +16,7 @@ import Html exposing (Html)
 import Ports
 import Http
 import Window
-import Views.Home as Home
 import Views.Study as Study
-import Views.Thanks as Thanks
-import Views.Error as Error
 
 
 main : Program Never Model Msg
@@ -38,7 +35,7 @@ main =
 
 initialModel : Model
 initialModel =
-    { currentRoute = Route.Home
+    { currentRoute = Route.Study
     , study = Study.init
     , log = Log.empty
     }
@@ -84,9 +81,6 @@ subscriptions model =
             Route.Study ->
                 Sub.batch <| (Window.resizes <| always WindowResizes) :: baseSubs
 
-            _ ->
-                Sub.batch baseSubs
-
 
 
 -- VIEW ##############################################################
@@ -94,15 +88,4 @@ subscriptions model =
 
 view : Model -> Html Msg
 view model =
-    case model.currentRoute of
-        Route.Home ->
-            Home.view model
-
-        Route.Study ->
-            Study.view model
-
-        Route.Thanks ->
-            Thanks.view model
-
-        Route.Error ->
-            Error.view model
+    Study.view model

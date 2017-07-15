@@ -186,17 +186,8 @@ encodeNavigation navigation =
 encodeRoute : Route -> Encode.Value
 encodeRoute route =
     case route of
-        Route.Home ->
-            Encode.string "home"
-
         Route.Study ->
             Encode.string "study"
-
-        Route.Thanks ->
-            Encode.string "thanks"
-
-        Route.Error ->
-            Encode.string "error"
 
 
 encodeStudy : StudyLog -> Encode.Value
