@@ -2,24 +2,6 @@ html, .next {
 	color: #dddddd
 }
 
-header {
-	background: #444444;
-	box-shadow: 0px 5px 5px #444444;
-	z-index:2;
-}
-
-nav > a {
-	color: #dddddd;
-	text-decoration: none;
-	font-size: 2rem;
-}
-
-.nav-sep {
-	background: white;
-	height: 50%;
-	width: 1px;
-}
-
 .content-rectangle {
 	background: #602F42;
 }
